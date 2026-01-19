@@ -5,10 +5,10 @@
 
 #### Authentication Routes
 ```http
-    POST /auth/register              -> Register User (Hospital / Blood Bank / Donor)
-    POST /auth/login                 -> Login User & Get JWT
-    POST  /auth/logout                -> Logout User
-    GET  /auth/me                    -> Get Logged-in User Profile
+    POST /auth/register
+    POST /auth/login
+    POST  /auth/logout
+    GET  /auth/me
 ```
 #### User Profile
 ```http
@@ -24,44 +24,44 @@
 
 #### Hospital Routes
 ```http
-    POST /hospital/blood-requests                          -> Create Blood Request
-    GET  /hospital/blood-requests?status=PENDING           -> View My Blood Requests
-    GET  /hospital/nearby-blood-banks                      -> View Nearby Blood Banks
+    POST /hospital/blood-requests
+    GET  /hospital/blood-requests?status=PENDING
+    GET  /hospital/nearby-blood-banks
 ```
 
 #### Blood Bank Routes
 ```http
-    GET  /blood-bank/blood-requests?status=PENDING                         -> View Pending Blood Requests
-    POST /blood-bank/blood-requests/{request_id}/fulfill                   -> Fulfill Blood Request
-    POST /blood-bank/blood-requests/{request_id}/alert                     -> Alert Nearby Donors
+    GET  /blood-bank/blood-requests?status=PENDING
+    POST /blood-bank/blood-requests/{request_id}/fulfill
+    POST /blood-bank/blood-requests/{request_id}/alert
 
-    GET  /blood-bank/inventory                                             -> View Blood Inventory
-    PUT  /blood-bank/inventory                                             -> Update Blood Inventory
+    GET  /blood-bank/inventory
+    PUT  /blood-bank/inventory
 
-    GET  /blood-bank/blood-requests/{request_id}/donors                    -> View Donor Responses
+    GET  /blood-bank/blood-requests/{request_id}/donors
 
 ```
 
 #### Donor Routes
 ```http
-    GET  /donor/alerts?status=SENT                       -> View Blood Request Alerts
-    POST /donor/alerts/{alert_id}/respond                -> Accept / Decline Blood Request
+    GET  /donor/alerts?status=SENT
+    POST /donor/alerts/{alert_id}/respond
              
-    POST /donor/donations                                -> Record Blood Donation
-    PUT  /donor/availability                             -> Update Availability
+    POST /donor/donations
+    PUT  /donor/availability
 ```
 
 #### WebSocket Routes
 ```http
-    WS /ws/donor/{donor_id}                 -> Real-Time Blood Alert Notifications
-    WS /ws/blood-bank/{blood_bank_id}       -> Real-Time Request Updates (Optional)
+    WS /ws/donor/{donor_id}
+    WS /ws/blood-bank/{blood_bank_id}
 ```
 
 #### Admin Routes
 ```http
-    POST /admin/verify-user/{user_id}       -> Verify User Account
-    GET  /admin/users                       -> View All Users
-    GET  /admin/stats                       -> View System Statistics
+    POST /admin/verify-user/{user_id}
+    GET  /admin/users
+    GET  /admin/stats
 ```
 ---
 ---
