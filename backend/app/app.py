@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+from app.routes.hospital import route as hospital_route
+
 
 app = FastAPI(title='Blood Donation System')
 
-
+app.include_router(hospital_route)
 
 
 @app.get("/")
